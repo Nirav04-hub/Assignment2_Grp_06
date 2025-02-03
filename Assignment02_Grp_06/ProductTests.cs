@@ -105,11 +105,9 @@ namespace Assignment02_Grp_06
             // Test case 7: DecreaseStock should return 40
             // Arrange
             Product product7 = new Product(100, "Product7", 1000, 50);
-
             // Act
             int expected = 40;
             product7.DecreaseInStock(10);
-
             // Assert
             Assert.That(expected, Is.EqualTo(product7.StockAmount));
         }
