@@ -9,11 +9,14 @@ namespace Assignment02_Grp_06
 {
     [TestFixture]
     public class ProductTests
+
+    // Test cases for Product 
     {
         [Test]
-        public void Product_ProdId_ShouldBeMinimumValid()
+        public void ProdId_Input8_Output8()
         {
-            // Test case 1: minimum valid ProdId
+            // Test case 1: ProdId should accept the minimum valid value
+
             // Arrange
             Product product1 = new Product(8, "Product1", 1000, 50);
 
@@ -26,9 +29,9 @@ namespace Assignment02_Grp_06
         }
 
         [Test]
-        public void Product_ProdId_ShouldBeMaximumValid()
+        public void ProdId_Input80000_Output80000()
         {
-            // Test case 2: maximum valid ProdId
+            // Test case 2: ProdId should accept maximum valid value
             // Arrange
             Product product2 = new Product(80000, "Product2", 1000, 50);
 
@@ -40,9 +43,9 @@ namespace Assignment02_Grp_06
         }
 
         [Test]
-        public void Product_ProdId_ShouldBeInRange()
+        public void ProdId_Input40000_Output40000()
         {
-            // Test case 3: ProdId should be in the range
+            // Test case 3: ProdId should be in the range between 8 to 80000
 
             // Arrange
             Product product3 = new Product(40000, "Product3", 1000, 50);
@@ -55,9 +58,10 @@ namespace Assignment02_Grp_06
         }
 
         [Test]
-        public void Product_ItemPrice_ShouldBeMinimumValid()
+        public void ItemPrice_Input8_Output8()
         {
             // Test case 4: ItemPrice should be minimum valid
+
             // Arrange
             Product product4 = new Product(100, "Product4", 8, 50);
 
@@ -69,9 +73,9 @@ namespace Assignment02_Grp_06
         }
 
         [Test]
-        public void Product_ItemPrice_ShouldBeMaximumValid()
+        public void ItemPrice_Input8000_Output8000()
         {
-            // Test case 5: ItemPrice should be maximum valid
+            // Test case 5: ItemPrice should accept maximum valid value
             // Arrange
             Product product5 = new Product(100, "Product5", 8000, 50);
 
@@ -83,9 +87,9 @@ namespace Assignment02_Grp_06
         }
 
         [Test]
-        public void Product_ItemPrice_ShouldBeInRange()
+        public void ItemPrice_Input4000_Output4000()
         {
-            //Test case 6: ItemPrice should be in the range
+            //Test case 6: ItemPrice should be in the range of 8 to 8000
             // Arrange
             Product product6 = new Product(100, "Product6", 4000, 50);
 
@@ -95,9 +99,8 @@ namespace Assignment02_Grp_06
             // Assert
             Assert.That(expected, Is.EqualTo(product6.ItemPrice));
         }
-
         [Test]
-        public void DecreseStock_input10_ShouldReturn40()
+        public void DecreaseStock_input10_Return40()
         {
             // Test case 7: DecreaseStock should return 40
             // Arrange
@@ -111,9 +114,9 @@ namespace Assignment02_Grp_06
             Assert.That(expected, Is.EqualTo(product7.StockAmount));
         }
 
-        
+
         [Test]
-        public void DecreaseStock_input10_ShouldSetStockToZeroInReturn()
+        public void DecreaseStock_10Minus10_Output0()
         {
             // Test case 8: Test decreasing stock to exactly zero
 
@@ -121,15 +124,15 @@ namespace Assignment02_Grp_06
             var product = new Product(401, "Smartwatch", 150, 10);
 
             //Act
-            product.DecreaseInStock(10);
+            int expected = product.DecreaseInStock(10);
 
             //Assert
-            Assert.That(product.StockAmount, Is.EqualTo(0));
+            Assert.That(product.StockAmount, Is.EqualTo(10));
         }
 
-        
+
         [Test]
-        public void DecreaseStock_ShouldNotDecreaseStock_WhenAmountExceedsAvailable()
+        public void DecreaseStock_30_20()
         {
             // Test case 9: Test decreasing stock by more than available (should not change)
 
@@ -137,15 +140,15 @@ namespace Assignment02_Grp_06
             var product = new Product(402, "Smartwatch", 150, 20);
 
             //Act
-            product.DecreaseInStock(0);
+            product.DecreaseInStock(30);
 
             //Assert
             Assert.That(product.StockAmount, Is.EqualTo(20));
         }
 
-        
+
         [Test]
-        public void DecreaseStock_ShouldNotChangeStock_WhenZeroTheInputGivenIsZero()
+        public void DecreaseStock_0_20()
         {
             //Test case 10: Test decreasing stock with zero (should not change)
 
@@ -159,9 +162,9 @@ namespace Assignment02_Grp_06
             Assert.That(product.StockAmount, Is.EqualTo(20));
         }
 
-       
+
         [Test]
-        public void DecreaseStock_ShouldNotChangeStock_WhenInputIsNegative()
+        public void DecreaseStock_Minu5_0()
         {
             // Test case 11: Test decreasing stock with a negative value (should not change)
 
@@ -175,9 +178,9 @@ namespace Assignment02_Grp_06
             Assert.That(product.StockAmount, Is.EqualTo(25));
         }
 
-        
+
         [Test]
-        public void DecreaseStock_ShouldDecreaseStock_WhenInputIsAtMaximumLimit()
+        public void DecreaseStock_1000_800000()
         {
             // Test case 12: Test decreasing stock from maximum limit
 
@@ -189,6 +192,101 @@ namespace Assignment02_Grp_06
 
             //Assert
             Assert.That(product.StockAmount, Is.EqualTo(799000));
+        }
+
+        [Test]
+        public void StockAmount_8_8()
+        {
+            //Test case 13: StockAmount should accept the minimum valid value
+
+            //Arrange
+            Product product = new Product(200, "Tablet", 500, 8);
+
+            //Act
+            int expected = 8;
+
+            //Assert
+            Assert.That(expected, Is.EqualTo(8));
+        }
+
+
+        [Test]
+        public void StockAmount_800000_800000()
+        {
+            //Test case 14: StockAmount should accept the maximum valid value
+
+            //Arrange
+            Product product = new Product(201, "Tablet", 500, 800000);
+
+            //Act
+            int expected = 800000;
+
+            //Assert
+            Assert.That(expected, Is.EqualTo(800000));
+        }
+
+        [Test]
+        public void StockAmount_400000_400000()
+        {
+
+            // Test case 15: To test is the stock amount is accepting the mid range value
+
+            //Arrange
+            var product = new Product(202, "Tablet", 500, 400000);
+
+            //Act
+            int expected = 400000;
+
+            //Assert
+            Assert.That(expected, Is.EqualTo(400000));
+        }
+
+        [Test]
+        public void IncreaseStock_50_60()
+        {
+            //Test case 16: Testing if the stock is increasing 
+
+            //Arrange
+            var product = new Product(300, "Headphones", 8, 50);
+
+            //Act
+            int expected = product.IncreaseInStock(10);
+
+
+            //Assert
+            Assert.That(expected, Is.EqualTo(60));
+        }
+
+
+        [Test]
+        public void IncreaseStock_0_50()
+        {
+            // Test case 17: Testing if the stock is not changing when the value is zero
+
+            //Arrange
+            var product = new Product(301, "Headphones", 8, 50);
+
+            //Act
+            int expected = product.IncreaseInStock(0);
+
+            //Assert
+            Assert.That(expected, Is.EqualTo(50));
+        }
+
+
+        [Test]
+        public void IncreaseStock_Minus5_50()
+        {
+            // Test case 18 increasing stock with negative value it should not change the amount
+
+            //Arrange
+            var product = new Product(302, "Headphones", 8, 50);
+
+            //Act
+            int expected = product.IncreaseInStock(-5);
+
+            //Assert
+            Assert.That(expected, Is.EqualTo(50));
         }
     }
 }

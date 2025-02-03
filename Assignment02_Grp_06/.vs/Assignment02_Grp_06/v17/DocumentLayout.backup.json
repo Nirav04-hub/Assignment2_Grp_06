@@ -21,7 +21,7 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedHeight": 200,
+          "DockedHeight": 282,
           "SelectedChildIndex": 8,
           "Children": [
             {
@@ -62,9 +62,9 @@
               "Title": "ProductTests.cs",
               "DocumentMoniker": "C:\\Users\\aryan\\OneDrive\\Desktop\\Assignment2_Grp_06\\Assignment02_Grp_06\\ProductTests.cs",
               "RelativeDocumentMoniker": "ProductTests.cs",
-              "ToolTip": "C:\\Users\\aryan\\OneDrive\\Desktop\\Assignment2_Grp_06\\Assignment02_Grp_06\\ProductTests.cs*",
-              "RelativeToolTip": "ProductTests.cs*",
-              "ViewState": "AgIAAKMAAAAAAAAAAAA3wK4AAAA6AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\aryan\\OneDrive\\Desktop\\Assignment2_Grp_06\\Assignment02_Grp_06\\ProductTests.cs",
+              "RelativeToolTip": "ProductTests.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAkwGUAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T04:36:14.32Z",
               "EditorCaption": ""
@@ -77,7 +77,7 @@
               "RelativeDocumentMoniker": "Product.cs",
               "ToolTip": "C:\\Users\\aryan\\OneDrive\\Desktop\\Assignment2_Grp_06\\Assignment02_Grp_06\\Product.cs",
               "RelativeToolTip": "Product.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAQwAkAAAAFAAAAAAAAAA==",
+              "ViewState": "AgIAACQAAAAAAAAAAAAwwDgAAAABAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-02-03T03:57:21.185Z",
               "EditorCaption": ""
@@ -97,7 +97,7 @@
           ]
         },
         {
-          "DockedHeight": 200,
+          "DockedHeight": 118,
           "SelectedChildIndex": -1,
           "Children": [
             {

@@ -15,11 +15,11 @@ namespace Assignment02_Grp_06
 
         public Product(int prodId, string prodName, int itemPrice, int stockAmount)
         {
-            if(prodId < 8 || ProdId >80000)
+            if (prodId < 8 || ProdId > 80000)
             {
                 throw new ArgumentException(" Product ID must be between 8 and 80000");
             }
-            if(itemPrice < 8 || itemPrice > 8000)
+            if (itemPrice < 8 || itemPrice > 8000)
             {
                 throw new ArgumentException("Item price must be between 8 and 8000");
             }
@@ -34,20 +34,24 @@ namespace Assignment02_Grp_06
             StockAmount = stockAmount;
         }
 
-        public void IncreaseInStock(int amount)
+        public int IncreaseInStock(int amount)
         {
-            if(amount < 0)
+            if (amount > 0)
             {
-            StockAmount += amount;
+                StockAmount += amount;
+                return StockAmount;
             }
+            return StockAmount;
         }
-        public void DecreaseInStock(int amount)
+        public int DecreaseInStock(int amount)
         {
-            if ( amount != null )
+            if (amount != null && StockAmount > amount)
             {
                 StockAmount -= amount;
+                return StockAmount;
             }
-            
+            return StockAmount;
+
         }
     }
 }
